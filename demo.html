@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>demo</title>
+    <link rel="stylesheet" href="">
+    <style>
+        body{
+            padding: 100px;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .list{
+            width: 150px;
+            margin-top: 10px;
+            margin-bottom: 10px
+        }
+        .list li{
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .list img{
+            width: 100%
+        }
+        .list p{
+            padding: 6px 0;
+        }
+    </style>
+</head>
+<body>
+<div id="list">
+    你可能会喜欢  广告
+    <ul id="Ul" class="list"></ul>
+</div>
+</body>
+</html>
+<script>
+    var obj=[
+        {
+            "picUrl": "img/p1.jpg",
+            "name": "沸炉火锅11111",
+            "star": 5,
+            "address": "回龙观",
+            "price": 85
+        },
+        {
+            "picUrl": "img/p2.jpg",
+            "name": "斗川火锅",
+            "star": 4.5,
+            "address": "回龙观",
+            "price": 73
+        },
+        {
+            "picUrl": "img/p3.jpg",
+            "name": "火锅3",
+            "star": 4.5,
+            "address": "望京",
+            "price": 127
+        }
+    ]
+    var oUl=document.getElementById("Ul");
+    for(var i=0;i<obj.length;i++){
+        oUl.innerHTML+="<li>"+
+            "<img src="+obj[i]["picUrl"]+">"+
+            "<p>"+obj[i]["name"]+"</p>"+
+            "<p>"+obj[i]["star"]+"</p>"+
+            "<p>"+obj[i]["address"]+"</p>"+
+            "<p>"+obj[i]["price"]+"</p>"+
+            "</li>"
+    }
+
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>数组各种操作</title>
+    <link rel="stylesheet" href="">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        input, button{
+            padding: 6px;
+        }
+        body{
+            padding: 200px;
+        }
+        span{
+            padding: 6px;
+            background: green;
+            color: #fff;
+            margin: 10px;
+        }
+        #result{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <input id="ipt" type="text" placeholder="请输入">
+    <button id="addHead">从头部添加</button>
+    <button id="addEnd">从尾部添加</button>
+    <button id="deleteHead">从头部删除</button>
+    <button id="deleteEnd">从尾部删除</button>
+    <button id="reverse">反转</button>
+    <button id="upToLow">从高往低排序</button>
+    <button id="lowToUp">从低往高排序</button>
+    <button id="unique">去重</button>
+</div>
+<div id="result"></div>
+</body>
+</html>
+<script>
+    function getElem(id){
+        return document.getElementById(id);
+    }
+    var addHead = getElem("addHead");
+    var addEnd = getElem("addEnd");
+    var deleteHead = getElem("deleteHead");
+    var deleteEnd = getElem("deleteEnd");
+    var ipt = getElem("ipt");
+    var  oResult=getElem("result");
+    var initArr = [1,100,2,4];
+
+
+   var box= function() {
+        var st="";
+        for(var i=0;i<initArr.length;i++){
+            st +="<span>"+initArr[i] +"</span>"
+        }
+        oResult.innerHTML = st;
+    }
+    addHead.onclick = function(){
+        if(ipt.value == ""){
+            return;
+        }
+        var val = parseInt(ipt.value);
+        initArr.unshift(val);
+        box();
+    }
+    addEnd.onclick = function(){
+        if(ipt.value == ""){
+            return;
+        }
+        var val = parseInt(ipt.value);
+        initArr.push(val);
+
+        addHtml();
+    }
+    deleteHead.onclick = function(){
+        initArr.shift();
+        addHtml();
+    }
+    deleteEnd.onclick = function(){
+        initArr.pop();
+        addHtml();
+    }
+</script>
